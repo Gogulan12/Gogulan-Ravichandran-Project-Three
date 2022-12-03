@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import Header from "./Header.js";
 
-function App() {
+/////////////////////////////APP FUNCTION
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      <Searchform />
+
+      <ul>
+        <Searchterm />
+      </ul>
+
+      <Memeimages />
     </div>
   );
 }
 
 export default App;
+
+/////////////////////////FORM FUNCTION//////////////////////////////
+function Searchform() {
+  const [word, setWord] = useState();
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("test");
+    setWord("");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <fieldset>
+        <legend>Search Term</legend>
+        <input
+          value={word}
+          onChange={(e) => setWord(e.target.value)}
+          placeholder="Word"
+        />
+        <button>search</button>
+      </fieldset>
+    </form>
+  );
+}
+
+///////////////////////LIST FUNCTION////////////////////////////////
+function Searchterm(props) {
+  return <li></li>;
+}
+
+//////////////////DISPLAY IMAGE FUNCTION////////////////////////////
+function Memeimages() {}
