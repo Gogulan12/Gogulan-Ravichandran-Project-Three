@@ -1,54 +1,50 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import SearchMeme from "./Search";
 import Header from "./Header.js";
+import Giphy from "./Giphycalls";
+import { useState, useEffect } from "react";
 
 /////////////////////////////APP FUNCTION
-function App(props) {
+
+function App() {
   return (
     <div className="App">
       <Header />
-
-      <Searchform />
-
-      <ul>
-        <Searchterm />
-      </ul>
-
-      <Memeimages />
+      <SearchMeme />
     </div>
   );
 }
 
 export default App;
 
-/////////////////////////FORM FUNCTION//////////////////////////////
-function Searchform() {
-  const [word, setWord] = useState();
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("test");
-    setWord("");
-  }
+// /////////////////////////FORM FUNCTION//////////////////////////////
+// function Searchform() {
+//   const [word, setWord] = useState();
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     console.log("test");
+//     setWord("");
+//   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Search Term</legend>
-        <input
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
-          placeholder="Word"
-        />
-        <button>search</button>
-      </fieldset>
-    </form>
-  );
-}
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <fieldset>
+//         <legend>Search Term</legend>
+//         <input
+//           value={word}
+//           onChange={(e) => setWord(e.target.value)}
+//           placeholder="Word"
+//         />
+//         <button>search</button>
+//       </fieldset>
+//     </form>
+//   );
+// }
 
-///////////////////////LIST FUNCTION////////////////////////////////
-function Searchterm(props) {
-  return <li></li>;
-}
+// ///////////////////////LIST FUNCTION////////////////////////////////
+// function Searchterm(props) {
+//   return <li></li>;
+// }
 
-//////////////////DISPLAY IMAGE FUNCTION////////////////////////////
-function Memeimages() {}
+// //////////////////DISPLAY IMAGE FUNCTION////////////////////////////
+// function Memeimages() {}
