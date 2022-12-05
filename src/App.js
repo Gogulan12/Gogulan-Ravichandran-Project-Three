@@ -1,6 +1,7 @@
 import "./App.css";
 import SearchMeme from "./Search";
 import Header from "./Header.js";
+import Footer from "./Footer";
 import Giphy from "./Giphycalls";
 import { useState, useEffect } from "react";
 
@@ -8,10 +9,15 @@ import { useState, useEffect } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <SearchMeme />
-    </div>
+    <>
+      <div id="container">
+        <div className="App">
+          <Header />
+          <SearchMeme />
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

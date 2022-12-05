@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+/* * {
+  border: 1px solid black;
+} */
 .App {
   text-align: center;
 }
@@ -37,6 +42,88 @@
   }
 }
 
-img {
-  width: 30px;
+/* body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+#root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+#container {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+
+  padding: 2px 0;
+  /* margin-top: -100px; */
+  width: 100%;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Lilita One", cursive;
+}
+
+p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: cursive;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin: 10px 10px 50px 10px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 16/10;
+}
+
+body {
+  background-color: #809ca7;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input {
+  font-family: cursive;
+  font-size: 1.25rem;
+  height: 20px;
+  padding: 15px 20px;
+  /* border: 5px solid black; */
+}
+
+button {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
+/* <iframe src="https://giphy.com/embed/l3vRnoppYtfEbemBO" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starfield-pico8-l3vRnoppYtfEbemBO">via GIPHY</a></p> */
