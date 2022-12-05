@@ -70,6 +70,10 @@
   text-align: center;
 }
 
+.footer p {
+  text-transform: capitalize;
+}
+
 h1 {
   font-size: 3rem;
   font-family: "Lilita One", cursive;
@@ -98,6 +102,13 @@ img {
   width: 300px;
   height: 300px;
   aspect-ratio: 16/10;
+  border: 6px solid black;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.03);
+  cursor: pointer;
 }
 
 body {
@@ -108,7 +119,7 @@ body {
 }
 
 input {
-  font-family: cursive;
+  font-family: "Lilita One", cursive;
   font-size: 1.25rem;
   height: 20px;
   padding: 15px 20px;
@@ -124,6 +135,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1.25rem;
+  font-family: "Lilita One", cursive;
 }
 
 /* <iframe src="https://giphy.com/embed/l3vRnoppYtfEbemBO" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starfield-pico8-l3vRnoppYtfEbemBO">via GIPHY</a></p> */
