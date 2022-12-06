@@ -8,7 +8,8 @@ const ToDo = ({ todo, handleToggle }) => {
     <div
       id={todo.id}
       // key={todo.id + todo.task}
-      // name="todo"
+      key={todo.id}
+      name="todo"
       value={todo.id}
       onClick={handleClick}
       className={todo.complete ? "strike" : ""}

@@ -10,33 +10,33 @@ import data from "./data.json";
 /////////////////////////////APP FUNCTION
 
 function App() {
-  const [toDoList, setToDoList] = useState(data);
+  // const [toDoList, setToDoList] = useState(data);
 
-  const handleToggle = (id) => {
-    let mapped = toDoList.map((task) => {
-      return task.id == id
-        ? { ...task, complete: !task.complete }
-        : { ...task };
-    });
-    setToDoList(mapped);
-  };
+  // const handleToggle = (id) => {
+  //   let mapped = toDoList.map((task) => {
+  //     return task.id == id
+  //       ? { ...task, complete: !task.complete }
+  //       : { ...task };
+  //   });
+  //   setToDoList(mapped);
+  // };
 
-  const addTask = (userInput) => {
-    let copy = [...toDoList];
-    copy = [
-      ...copy,
-      { id: toDoList.length + 1, task: userInput, complete: false },
-    ];
-    setToDoList(copy);
-  };
+  // const addTask = (userInput) => {
+  //   let copy = [...toDoList];
+  //   copy = [
+  //     ...copy,
+  //     { id: toDoList.length + 1, task: userInput, complete: false },
+  //   ];
+  //   setToDoList(copy);
+  // };
 
   return (
     <>
       <div id="container">
         <div className="App">
           <Header />
-          <SearchMeme addTask={addTask} />
-          <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
+          <SearchMeme />
+          {/* <ToDoList toDoList={toDoList} handleToggle={handleToggle} /> */}
           {/* <ToDoForm addTask={addTask}/> */}
         </div>
       </div>
