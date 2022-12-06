@@ -1,13 +1,19 @@
+import { getByTitle } from "@testing-library/react";
 import { useState } from "react";
 // import Giphy from "./Giphycalls";
 
 const URL =
   "https://api.giphy.com/v1/gifs/search?api_key=JWM5aI5u0l4cieNdczozIfDEtlcZCXgU&rating=g&limit=20&q=";
 
-function SearchMeme() {
+function SearchMeme({ addTask }) {
   let [search, setSearch] = useState("");
   let [gifs, setgifs] = useState([]);
   let [keys, setKeys] = useState([]);
+  const [userInput, setUserInput] = useState("");
+
+  const handleChange = (e) => {
+    setUserInput(e.currentTarget.value);
+  };
 
   // let [loading, setLoading] = useState(false);
   let SearchGif = () => {
@@ -58,6 +64,8 @@ function SearchMeme() {
     // 👇️ prevent page refresh
     event.preventDefault();
     console.log("form submitted ✅");
+    addTask(userInput);
+    setUserInput("");
   };
 
   return (
@@ -69,8 +77,11 @@ function SearchMeme() {
           <input
             type="text"
             placeholder="Search..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={search || userInput}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              handleChange(e);
+            }}
           />
           <button
             onClick={() => {
@@ -92,7 +103,7 @@ function SearchMeme() {
           {gifs.map((gif) => {
             {
               return (
-                <div className="item">
+                <div className="item" id={gif.id}>
                   <img src={gif} alt={search} />
                 </div>
               );

@@ -2,18 +2,42 @@ import "./App.css";
 import SearchMeme from "./Search";
 import Header from "./Header.js";
 import Footer from "./Footer";
-import Giphy from "./Giphycalls";
+import ToDoList from "./ToDoList";
 import { useState, useEffect } from "react";
+import data from "./data.json";
+// import ToDoForm from "./ToDoForm";
 
 /////////////////////////////APP FUNCTION
 
 function App() {
+  const [toDoList, setToDoList] = useState(data);
+
+  const handleToggle = (id) => {
+    let mapped = toDoList.map((task) => {
+      return task.id == id
+        ? { ...task, complete: !task.complete }
+        : { ...task };
+    });
+    setToDoList(mapped);
+  };
+
+  const addTask = (userInput) => {
+    let copy = [...toDoList];
+    copy = [
+      ...copy,
+      { id: toDoList.length + 1, task: userInput, complete: false },
+    ];
+    setToDoList(copy);
+  };
+
   return (
     <>
       <div id="container">
         <div className="App">
           <Header />
-          <SearchMeme />
+          <SearchMeme addTask={addTask} />
+          <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
+          {/* <ToDoForm addTask={addTask}/> */}
         </div>
       </div>
       <Footer />
