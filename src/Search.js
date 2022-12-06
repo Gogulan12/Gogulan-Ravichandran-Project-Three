@@ -7,6 +7,8 @@ const URL =
 function SearchMeme() {
   let [search, setSearch] = useState("");
   let [gifs, setgifs] = useState([]);
+  let [keys, setKeys] = useState([]);
+
   // let [loading, setLoading] = useState(false);
   let SearchGif = () => {
     if (search.length > 0) {
@@ -20,6 +22,28 @@ function SearchMeme() {
           setgifs(
             result.data.map((gif) => {
               return gif.images.fixed_height.url;
+            })
+          );
+        })
+        .catch(() => {
+          // setLoading(false);
+          alert("something went wrong");
+        });
+    }
+  };
+
+  let SearchGifKey = () => {
+    if (search.length > 0) {
+      // setLoading(true);
+      fetch(URL + search)
+        .then((res) => {
+          // setLoading(false);
+          return res.json();
+        })
+        .then((result) => {
+          setKeys(
+            result.data.map((key) => {
+              return key.id;
             })
           );
         })
@@ -48,12 +72,17 @@ function SearchMeme() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button onClick={SearchGif}>Search</button>
+          <button
+            onClick={() => {
+              SearchGif();
+              SearchGifKey();
+            }}
+          >
+            Search
+          </button>
         </form>
       </div>
-      <div>
-        <h2>{SearchGif}</h2>
-      </div>
+      <div>{/* <h2>{search}</h2> */}</div>
 
       <div className="result">
         {/* <div className="loading">
@@ -61,12 +90,15 @@ function SearchMeme() {
         </div> */}
         <div className="list">
           {gifs.map((gif) => {
-            return (
-              <div className="item">
-                <img src={gif} />
-              </div>
-            );
+            {
+              return (
+                <div className="item">
+                  <img src={gif} alt={search} />
+                </div>
+              );
+            }
           })}
+          {/* {keys.map((key) => {})} */}
         </div>
       </div>
     </div>
