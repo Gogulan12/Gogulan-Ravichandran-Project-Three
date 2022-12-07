@@ -1,6 +1,6 @@
 import "./App.css";
-import SearchMeme from "./Search";
 import Header from "./Header.js";
+import SearchMeme from "./Search";
 import Footer from "./Footer";
 
 /////////////////////////////APP FUNCTION///////////////////////////////
@@ -11,7 +11,9 @@ function App() {
       <div id="container">
         <div className="App">
           <Header />
-          <SearchMeme />
+          <main>
+            <SearchMeme />
+          </main>
         </div>
       </div>
       <Footer />

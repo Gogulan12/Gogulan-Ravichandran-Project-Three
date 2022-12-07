@@ -7,7 +7,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
         return <ToDo todo={todo} handleToggle={handleToggle} />;
       })}
       <button onClick={handleFilter}>Clear History</button>
-      <p>select word to clear</p>
+      <p className="searchComment">select word to clear</p>
     </>
   );
 };
