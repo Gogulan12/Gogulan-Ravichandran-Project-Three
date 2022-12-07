@@ -18,8 +18,6 @@ function SearchMeme() {
   //////////////////CROSS OUT HISTORY////////
   const handleToggle = (id) => {
     let mapped = toDoList.map((task) => {
-      console.log(task.id);
-      console.log(id);
       return Number(task.id) === Number(id)
         ? { ...task, complete: !task.complete }
         : { ...task };
