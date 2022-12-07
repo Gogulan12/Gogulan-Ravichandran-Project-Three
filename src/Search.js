@@ -114,7 +114,7 @@ function SearchMeme() {
       </div>
 
       <div className="result">
-        <div className="list">
+        <div className="list wrapper">
           {apidata.map((data) => {
             return (
               <div className="item " key={data.id}>
