@@ -42,37 +42,7 @@
   }
 }
 
-/* body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-} */
-#root {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-#container {
-  flex-grow: 1;
-}
-
-.footer {
-  background-color: black;
-  color: white;
-
-  padding: 2px 0;
-  /* margin-top: -100px; */
-  width: 100%;
-
-  text-align: center;
-}
-
-.footer p {
-  text-transform: capitalize;
-}
+/******************** GENERAL STYLING ***********************/
 
 h1 {
   font-size: 3rem;
@@ -84,6 +54,76 @@ p {
   text-transform: uppercase;
   font-family: cursive;
 }
+
+body {
+  background-color: #809ca7;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ********************************************************* */
+
+/******************** HEADER SECTION ***********************/
+
+.Memegenerator img {
+  border: none;
+  padding-top: 100px;
+  width: 480px;
+  height: 480px;
+}
+
+/* ********************************************************* */
+
+/******************** SEARCH BAR SECTION ***********************/
+
+input {
+  font-family: "Lilita One", cursive;
+  font-size: 1.25rem;
+  height: 20px;
+  padding: 15px 20px;
+}
+
+button {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: "Lilita One", cursive;
+  cursor: pointer;
+}
+
+/* ********************************************************* */
+
+/******************** HISTORY SECTION ***********************/
+
+.searchHistory {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 100px;
+  color: rgb(41, 50, 100);
+  text-transform: uppercase;
+}
+
+.searchHistory h3 {
+  text-decoration: underline;
+}
+
+.searchHistory div:hover {
+  cursor: pointer;
+}
+
+.searchHistory button {
+  margin-top: 50px;
+}
+
+/* ********************************************************* */
+
+/******************** GALLERY SECTION ***********************/
 
 .list {
   display: flex;
@@ -110,46 +150,32 @@ img:hover {
   transform: scale(1.03);
   cursor: pointer;
 }
+/* ********************************************************* */
 
-body {
-  background-color: #809ca7;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
+/******************** FOOTER SECTION ***********************/
+#root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-input {
-  font-family: "Lilita One", cursive;
-  font-size: 1.25rem;
-  height: 20px;
-  padding: 15px 20px;
-  /* border: 5px solid black; */
+#container {
+  flex-grow: 1;
 }
 
-button {
-  background-color: purple;
-  border: none;
+.footer {
+  background-color: black;
   color: white;
-  padding: 15px 32px;
+
+  padding: 2px 0;
+  width: 100%;
+
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.25rem;
-  font-family: "Lilita One", cursive;
 }
 
-.searchHistory {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 100px;
-  color: rgb(41, 50, 100);
-  text-transform: uppercase;
+.footer p {
+  text-transform: capitalize;
 }
 
-.searchHistory h3 {
-  text-decoration: underline;
-}
-
-.searchHistory div:hover {
-  cursor: pointer;
-}
+/* ********************************************************* */

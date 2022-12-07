@@ -4,11 +4,12 @@ const ToDo = ({ todo, handleToggle }) => {
     handleToggle(e.currentTarget.id);
   };
 
+  // console.log(todo);
   return (
     <div
       id={todo.id}
-      // key={todo.id + todo.task}
-      key={todo.id}
+      key={todo.id + todo.task + 1}
+      // key={todo.id}
       name="todo"
       value={todo.id}
       onClick={handleClick}

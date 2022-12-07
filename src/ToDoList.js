@@ -1,12 +1,13 @@
 import ToDo from "./ToDo";
 
-const ToDoList = ({ toDoList, handleToggle }) => {
+const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
   return (
-    <div>
+    <>
       {toDoList.map((todo) => {
         return <ToDo todo={todo} handleToggle={handleToggle} />;
       })}
-    </div>
+      <button onClick={handleFilter}>Clear History</button>
+    </>
   );
 };
 

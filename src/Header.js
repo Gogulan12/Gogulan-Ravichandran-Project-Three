@@ -2,18 +2,11 @@ const Header = () => {
   return (
     <header>
       <div className="Memegenerator">
-        <iframe
-          src="https://giphy.com/embed/F73KLZL9eAfDcDQFAt"
-          width="480"
-          height="480"
-          frameBorder="0"
-          className="giphy-embed"
-          allowFullScreen
-        ></iframe>
+        <img
+          src="https://media1.giphy.com/media/F73KLZL9eAfDcDQFAt/giphy.gif?cid=790b761194f938b935d77af5e90f33beadbba557f2d824dc&rid=giphy.gif&ct=s"
+          alt="cat typing on laptop"
+        />
       </div>
-
-      {/* <h1>MEME GENERATOR</h1>
-      <p>Select a word to generate your perfect meme</p> */}
     </header>
   );
 };
