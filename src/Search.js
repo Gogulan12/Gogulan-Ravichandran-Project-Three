@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ToDo from "./ToDo";
 
 import ToDoList from "./ToDoList";
 
@@ -19,7 +18,7 @@ function SearchMeme() {
   //////////////////CROSS OUT HISTORY////////
   const handleToggle = (id) => {
     let mapped = toDoList.map((task) => {
-      return task.id == id
+      return task.id === id
         ? { ...task, complete: !task.complete }
         : { ...task };
     });
